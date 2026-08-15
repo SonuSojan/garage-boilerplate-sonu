@@ -1,37 +1,26 @@
 import { requireAuth } from '@/actions/auth.actions'
 import { PageHeader } from '@/components/layout/PageHeader'
+import { TeamAvatar } from '@/components/shared/TeamAvatar'
 
 const teamMembers = [
   {
-    name: 'Hieu Hoang Quan',
-    role: 'Project Manager',
-    initials: 'HQ',
-    blurb: 'Coordinates the team, sprint planning and project delivery.',
-  },
-  {
     name: 'Sonu Sojan',
     role: 'Developer',
-    initials: 'SS',
+    photo: '/team/sonu.png',
     blurb: 'Works on application development, implementation and testing.',
-  },
-  {
-    name: 'Gladvin Savio',
-    role: 'Business Analyst',
-    initials: 'GS',
-    blurb: 'Supports requirements, documentation and project analysis.',
-  },
-  {
-    name: 'Oliver Ferris',
-    role: 'UX Designer',
-    initials: 'OF',
-    blurb: 'Responsible for user experience and interface design.',
   },
   {
     name: 'Luka Grganovic',
     role: 'Developer',
-    initials: 'LG',
+    photo: '/team/luka.jpeg',
     blurb: 'Works on application development, integration and testing.',
   },
+ {
+  name: 'Gladvin Savio',
+  role: 'Project Manager',
+  photo: '/team/gladvin.jpeg',
+  blurb: 'Coordinates the team, manages project tasks and supports planning and documentation.',
+},
 ]
 
 export default async function TeamPage() {
@@ -50,9 +39,10 @@ export default async function TeamPage() {
             key={member.name}
             className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
           >
-            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-zinc-900 text-lg font-bold text-white dark:bg-white dark:text-black">
-              {member.initials}
-            </div>
+            <TeamAvatar
+              name={member.name}
+              photo={member.photo}
+            />
 
             <h2 className="text-lg font-semibold">
               {member.name}
