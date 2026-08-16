@@ -206,3 +206,7 @@ Follow the checklist in [CLAUDE.md — Forking for a New Client Project](CLAUDE.
 ## Credits
 
 Original boilerplate by **Duc Gia Tin Huynh** ([LinkedIn](https://www.linkedin.com/in/huynhducgiatin/)).
+
+## Task 2 Testing and Deployment
+
+Luka completed the final Task 2 testing and deployment checks. Testing included valid and invalid login, login redirect to the Team page, protected page access, sign-out behaviour, responsive layout, missing-photo fallback and final verification of the deployed site.
