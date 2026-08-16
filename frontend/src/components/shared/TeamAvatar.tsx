@@ -19,7 +19,7 @@ export function TeamAvatar({ name, photo }: TeamAvatarProps) {
 
   if (hasError) {
     return (
-      <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-zinc-900 text-lg font-bold text-white dark:bg-white dark:text-black">
+      <div className="flex h-24 w-24 items-center justify-center rounded-full bg-zinc-900 text-xl font-bold text-white dark:bg-white dark:text-black">
         {initials}
       </div>
     )
@@ -30,7 +30,7 @@ export function TeamAvatar({ name, photo }: TeamAvatarProps) {
       src={photo}
       alt={`${name} profile`}
       onError={() => setHasError(true)}
-      className="mb-5 h-20 w-20 rounded-full object-cover"
+      className="h-24 w-24 rounded-full object-cover"
     />
   )
 }
