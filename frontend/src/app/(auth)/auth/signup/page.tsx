@@ -53,16 +53,25 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="space-y-1 text-center">
-        <h1 className="text-2xl font-bold tracking-tight">Create account</h1>
-        <p className="text-sm text-zinc-500">Get started for free</p>
+    <div className="w-full rounded-2xl border border-white/20 bg-white/95 p-8 shadow-2xl backdrop-blur-sm dark:bg-zinc-900/95">
+      <div className="mb-8 space-y-2 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
+          Team 86
+        </p>
+
+        <h1 className="text-3xl font-bold tracking-tight">
+          Create account
+        </h1>
+
+        <p className="text-sm text-zinc-500">
+          Get started for free
+        </p>
       </div>
 
       <button
         type="button"
         onClick={handleGoogleSignIn}
-        className="flex w-full items-center justify-center gap-3 rounded-md border border-zinc-300 bg-white px-4 py-2.5 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800"
+        className="flex w-full items-center justify-center gap-3 rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm font-medium shadow-sm transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-950 dark:hover:bg-zinc-800"
       >
         <svg className="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true">
           <path
@@ -78,19 +87,23 @@ export default function SignUpPage() {
             fill="#FBBC05"
           />
           <path
-            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 0 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
             fill="#EA4335"
           />
         </svg>
+
         Continue with Google
       </button>
 
-      <div className="relative">
+      <div className="relative my-6">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t border-zinc-200 dark:border-zinc-700" />
         </div>
+
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-zinc-50 px-2 text-zinc-400 dark:bg-zinc-950">or</span>
+          <span className="bg-white px-3 text-zinc-400 dark:bg-zinc-900">
+            or continue with email
+          </span>
         </div>
       </div>
 
@@ -99,16 +112,18 @@ export default function SignUpPage() {
           <label htmlFor="displayName" className="text-sm font-medium">
             Name
           </label>
+
           <input
             id="displayName"
             type="text"
             autoComplete="name"
             aria-invalid={!!errors.displayName}
             aria-describedby={errors.displayName ? 'display-name-error' : undefined}
-            className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-zinc-400 focus:ring-2 focus:ring-zinc-500 focus:outline-none aria-invalid:border-red-500 dark:border-zinc-700 dark:bg-zinc-900"
+            className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 aria-invalid:border-red-500 dark:border-zinc-700 dark:bg-zinc-950 dark:focus:border-blue-400 dark:focus:ring-blue-900"
             placeholder="Your full name"
             {...register('displayName')}
           />
+
           {errors.displayName && (
             <p id="display-name-error" className="text-xs text-red-500" role="alert">
               {errors.displayName.message}
@@ -120,16 +135,18 @@ export default function SignUpPage() {
           <label htmlFor="email" className="text-sm font-medium">
             Email
           </label>
+
           <input
             id="email"
             type="email"
             autoComplete="email"
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? 'email-error' : undefined}
-            className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-zinc-400 focus:ring-2 focus:ring-zinc-500 focus:outline-none aria-invalid:border-red-500 dark:border-zinc-700 dark:bg-zinc-900"
+            className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 aria-invalid:border-red-500 dark:border-zinc-700 dark:bg-zinc-950 dark:focus:border-blue-400 dark:focus:ring-blue-900"
             placeholder="you@example.com"
             {...register('email')}
           />
+
           {errors.email && (
             <p id="email-error" className="text-xs text-red-500" role="alert">
               {errors.email.message}
@@ -141,16 +158,18 @@ export default function SignUpPage() {
           <label htmlFor="password" className="text-sm font-medium">
             Password
           </label>
+
           <input
             id="password"
             type="password"
             autoComplete="new-password"
             aria-invalid={!!errors.password}
             aria-describedby={errors.password ? 'password-error' : undefined}
-            className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-zinc-400 focus:ring-2 focus:ring-zinc-500 focus:outline-none aria-invalid:border-red-500 dark:border-zinc-700 dark:bg-zinc-900"
+            className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 aria-invalid:border-red-500 dark:border-zinc-700 dark:bg-zinc-950 dark:focus:border-blue-400 dark:focus:ring-blue-900"
             placeholder="Min. 8 characters, 1 uppercase, 1 number"
             {...register('password')}
           />
+
           {errors.password && (
             <p id="password-error" className="text-xs text-red-500" role="alert">
               {errors.password.message}
@@ -162,16 +181,18 @@ export default function SignUpPage() {
           <label htmlFor="confirmPassword" className="text-sm font-medium">
             Confirm password
           </label>
+
           <input
             id="confirmPassword"
             type="password"
             autoComplete="new-password"
             aria-invalid={!!errors.confirmPassword}
             aria-describedby={errors.confirmPassword ? 'confirm-password-error' : undefined}
-            className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-zinc-400 focus:ring-2 focus:ring-zinc-500 focus:outline-none aria-invalid:border-red-500 dark:border-zinc-700 dark:bg-zinc-900"
+            className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 aria-invalid:border-red-500 dark:border-zinc-700 dark:bg-zinc-950 dark:focus:border-blue-400 dark:focus:ring-blue-900"
             placeholder="••••••••"
             {...register('confirmPassword')}
           />
+
           {errors.confirmPassword && (
             <p id="confirm-password-error" className="text-xs text-red-500" role="alert">
               {errors.confirmPassword.message}
@@ -182,17 +203,17 @@ export default function SignUpPage() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full rounded-md bg-black px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+          className="w-full rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isSubmitting ? 'Creating account…' : 'Create account'}
         </button>
       </form>
 
-      <p className="text-center text-sm text-zinc-500">
+      <p className="mt-6 text-center text-sm text-zinc-500">
         Already have an account?{' '}
         <Link
           href="/auth/signin"
-          className="font-medium text-zinc-900 hover:underline dark:text-white"
+          className="font-semibold text-blue-600 hover:underline"
         >
           Sign in
         </Link>
